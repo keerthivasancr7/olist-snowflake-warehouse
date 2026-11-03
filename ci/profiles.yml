@@ -1,0 +1,13 @@
+olist:
+  target: ci
+  outputs:
+    ci:
+      type: snowflake
+      account: unused
+      user: unused
+      password: unused
+      role: OLIST_TRANSFORM
+      database: OLIST
+      warehouse: OLIST_WH
+      schema: STAGING
+      threads: 1

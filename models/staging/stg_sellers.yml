@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_sellers
+    description: "Latest seller records with standardised city and state values."
+    columns:
+      - name: seller_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: seller_state
+        data_tests:
+          - not_null
+
+      - name: batch_id
+        data_tests:
+          - not_null

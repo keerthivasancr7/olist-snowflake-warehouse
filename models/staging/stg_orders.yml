@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Latest order records with standardised statuses and typed timestamps."
+    columns:
+      - name: order_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+
+      - name: order_status
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - created
+                  - approved
+                  - invoiced
+                  - processing
+                  - shipped
+                  - delivered
+                  - unavailable
+                  - canceled
+
+      - name: order_purchase_timestamp
+        data_tests:
+          - not_null
+
+      - name: order_estimated_delivery_date
+        data_tests:
+          - not_null
+
+      - name: batch_id
+        data_tests:
+          - not_null

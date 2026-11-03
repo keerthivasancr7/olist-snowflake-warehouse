@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: product_performance
+    description: "Delivered merchandise value and freight by product."
+    columns:
+      - name: product_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: merchandise_value
+        data_tests:
+          - not_null

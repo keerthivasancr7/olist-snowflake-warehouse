@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: monthly_delivered_sales
+    description: "Delivered-order item values by purchase month. Order count includes delivered orders with items."
+    columns:
+      - name: purchase_month
+        data_tests:
+          - not_null
+          - unique
+
+      - name: merchandise_value
+        data_tests:
+          - not_null
+
+      - name: freight_value
+        data_tests:
+          - not_null
+
+      - name: total_item_value
+        data_tests:
+          - not_null

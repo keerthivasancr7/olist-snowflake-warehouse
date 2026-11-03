@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Cleaned customer records, retaining the latest batch per customer_id."
+    columns:
+      - name: customer_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer_unique_id
+        description: "Identifies a person across purchases."
+        data_tests:
+          - not_null
+
+      - name: customer_state
+        data_tests:
+          - not_null
+
+      - name: batch_id
+        data_tests:
+          - not_null

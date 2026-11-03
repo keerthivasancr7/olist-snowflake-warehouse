@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Customer dimension at customer_id grain. Use customer_unique_id for repeat purchases."
+    columns:
+      - name: customer_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer_unique_id
+        data_tests:
+          - not_null
+
+      - name: customer_state
+        data_tests:
+          - not_null

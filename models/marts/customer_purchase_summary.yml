@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: customer_purchase_summary
+    description: "One row per person with at least one delivered order."
+    columns:
+      - name: customer_unique_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: delivered_orders
+        data_tests:
+          - not_null
+
+      - name: is_repeat_customer
+        data_tests:
+          - not_null

@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: olist_raw
+    database: OLIST
+    schema: RAW
+    description: "Historical Olist CSV data with ingestion metadata."
+    tables:
+      - name: customers
+      - name: orders
+      - name: order_items
+      - name: products
+      - name: sellers

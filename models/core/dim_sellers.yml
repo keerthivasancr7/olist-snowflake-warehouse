@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_sellers
+    description: "Seller dimension with one row per seller_id."
+    columns:
+      - name: seller_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: seller_state
+        data_tests:
+          - not_null

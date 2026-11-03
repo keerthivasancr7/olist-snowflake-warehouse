@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: fct_order_items
+    description: "One row per order item, with merchandise value and freight separate."
+    columns:
+      - name: order_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fct_orders')
+                field: order_id
+
+      - name: order_item_id
+        data_tests:
+          - not_null
+
+      - name: product_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_products')
+                field: product_id
+
+      - name: seller_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_sellers')
+                field: seller_id
+
+      - name: merchandise_value
+        data_tests:
+          - not_null
+
+      - name: freight_value
+        data_tests:
+          - not_null
+
+      - name: total_item_value
+        data_tests:
+          - not_null

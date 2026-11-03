@@ -1,0 +1,41 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local credentials and authentication
+profiles.yml
+.env
+.env.*
+!.env.example
+*.p8
+*.pem
+*.key
+
+# Local datasets
+data/
+*.csv
+*.csv.gz
+!seeds/**/*.csv
+
+# Generated dbt files
+target/
+logs/
+dbt_packages/
+.user.yml
+
+# Personal worksheet and user assignments
+sql/history/
+sql/setup/04_assign_user_roles.sql
+
+# macOS
+.DS_Store
+
+# Accidental copies of the local connection profile
+profiles.yml*
+
+# Non-secret profile for offline CI parsing
+!ci/profiles.yml
+
+/work/
